@@ -8,7 +8,7 @@ function renderLicenseBadge(license) {
 
 function renderLicenseLink(license) {
   if (license) {
-    return `[${encodeURIComponent(license)}](https://choosealicense.com/licenses/${encodeURIComponent(license)}/`
+    return `[${encodeURIComponent(license)}](https://choosealicense.com/licenses/${encodeURIComponent(license)}/)`
   } else {
     return "";
   }
@@ -56,7 +56,8 @@ ${response.test}
 ${renderLicenseSection(response.license)}
 
 ## Questions\n
-${response.question}`;
+Contact me at ${response.email} if you have any questions.
+GitHub: ${response.github}`;
 };
 
 module.exports = generateMarkdown;
