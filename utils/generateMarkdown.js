@@ -44,6 +44,6 @@ ${response.license}
 
 ## Questions\n
 ${response.question}`;
-}
+};
 
 module.exports = generateMarkdown;
