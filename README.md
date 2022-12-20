@@ -1,6 +1,6 @@
 # Challenge 09 - README Generator
 
-[Link to project demonstration]()
+[Link to project demonstration](./assets/READMEgenerator-demo.mp4)
 
 ## Description
 
