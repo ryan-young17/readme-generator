@@ -1,37 +1,38 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
+const prompt = inquirer.createPromptModule();
 // TODO: Create an array of questions for user input
 const questions = [
     {
       type: "input",
       message: "What is your project title?",
-      name: "Project Title",
+      name: "title",
     },
     {
       type: "input",
       message: "What is your project description?",
-      name: "Description",
+      name: "description",
     },
     {
       type: "input",
       message: "What are the installation instructions?",
-      name: "Installation",  
+      name: "installation",  
     },
     {
       type: "input",
       message: "What is the usage information?",
-      name: "Usage",  
+      name: "usage",  
     },
     {
       type: "input",
       message: "Who contributed to the project?",
-      name: "Contributing",  
+      name: "contributing",  
     },
     {
       type: "input",
       message: "What are the test instructions?",
-      name: "Test Instructions",  
+      name: "test",  
     },
     {
       type: "list",
@@ -55,15 +56,39 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
+function writeToFile() {
+    fs.appendFile("newREADME.md",
+    `# ${questions.title}
+    
+    ## Description
+    
+    ${questions.description}
+    
+    ## Installation 
+    
+    ${questions.installation}
+    
+    ## Usage
+    
+    ${questions.usage}
+    
+    ## Contributers
+    
+    ${questions.contributing}
+    
+    ## Test
+    
+    ${questions.test}
+    
+    ## License
+    
+    ${questions.license}`)
+};
 
 // TODO: Create a function to initialize app
-function init(questions) {
-    inquirer
-        .prompt(questions)
-        .then(function (response) {
-            console.log(response);
-        })
+function init() {
+    prompt(questions)
+      .then(writeToFile);
 };
 
 // Function call to initialize app
