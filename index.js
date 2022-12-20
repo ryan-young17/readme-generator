@@ -65,7 +65,7 @@ function init() {
       .then((response) => {
         const readme = generateMarkdown(response);
         fs.writeFile("newREADME.md", readme,
-        (err) => err ? console.log(err) : console.log("Success!"));
+        (err) => err ? console.log(err) : console.log("Success! Your README file has been created."));
       })
       .catch((error) => {
         console.log(error);
