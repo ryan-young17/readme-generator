@@ -52,28 +52,34 @@ const questions = [
         "Mozilla Public License 2.0",
         "The Unlicense"],  
     },
+    {
+      type: "input",
+      message: "Enter email for questions.",
+      name: "question"
+    },
 ];
 
 function writeToFile(response) {
     fs.appendFile("newREADME.md",
-    `# ${response.title}\n
-  ## Description\n
-  ${response.description}\n
+  //   `# ${response.title}\n
+  // ## Description\n
+  // ${response.description}\n
 
-  ## Installation\n
-  ${response.installation}\n
+  // ## Installation\n
+  // ${response.installation}\n
     
-  ## Usage\n
-  ${response.usage}\n
+  // ## Usage\n
+  // ${response.usage}\n
   
-  ## Contributing\n
-  ${response.contributing}\n
+  // ## Contributing\n
+  // ${response.contributing}\n
     
-  ## Test\n
-  ${response.test}\n
+  // ## Test\n
+  // ${response.test}\n
     
-  ## License\n
-  ${response.license}`, (err) => err ? console.log(err) : console.log("Success!")
+  // ## License\n
+  // ${response.license}`,
+  (err) => err ? console.log(err) : console.log("Success!")
   )
 };
 
