@@ -37,26 +37,26 @@ ${renderLicenseBadge(response.license)}
 - [License](#License)
 - [Questions](#Questions)
 
-## Description\n
+## Description
 ${response.description}
 
-## Installation\n
+## Installation
 ${response.installation}
   
-## Usage\n
-${response.usage}\n
+## Usage
+${response.usage}
 
-## Contributing\n
+## Contributing
 ${response.contributing}
   
-## Test\n
+## Test
 ${response.test}
   
-## License\n
+## License
 ${renderLicenseSection(response.license)}
 
-## Questions\n
-Contact me at ${response.email} if you have any questions.
+## Questions
+Contact me at ${response.email} if you have any questions.\n
 GitHub: ${response.github}`;
 };
 
