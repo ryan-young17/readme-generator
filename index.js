@@ -56,33 +56,27 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile() {
+function writeToFile(response) {
     fs.appendFile("newREADME.md",
-    `# ${questions.title}
+    `# ${response.title}\n
+  ## Description\n
+  ${response.description}\n
+
+  ## Installation\n
+  ${response.installation}\n
     
-    ## Description
+  ## Usage\n
+  ${response.usage}\n
+  
+  ## Contributing\n
+  ${response.contributing}\n
     
-    ${questions.description}
+  ## Test\n
+  ${response.test}\n
     
-    ## Installation 
-    
-    ${questions.installation}
-    
-    ## Usage
-    
-    ${questions.usage}
-    
-    ## Contributers
-    
-    ${questions.contributing}
-    
-    ## Test
-    
-    ${questions.test}
-    
-    ## License
-    
-    ${questions.license}`)
+  ## License\n
+  ${response.license}`, (err) => err ? console.log(err) : console.log("Success!")
+  )
 };
 
 // TODO: Create a function to initialize app
