@@ -60,16 +60,12 @@ const questions = [
     },
 ];
 
-// function writeToFile(response) {
-//     fs.appendFile("newREADME.md",
-//   (err) => err ? console.log(err) : console.log("Success!")
-//   )
-// };
-
 function init() {
     prompt(questions)
       .then((response) => {
         const readme = generateMarkdown(response);
+        fs.writeFile("newREADME.md", readme,
+        (err) => err ? console.log(err) : console.log("Success!"));
       })
       .catch((error) => {
         console.log(error);
