@@ -60,33 +60,20 @@ const questions = [
     },
 ];
 
-function writeToFile(response) {
-    fs.appendFile("newREADME.md",
-  //   `# ${response.title}\n
-  // ## Description\n
-  // ${response.description}\n
-
-  // ## Installation\n
-  // ${response.installation}\n
-    
-  // ## Usage\n
-  // ${response.usage}\n
-  
-  // ## Contributing\n
-  // ${response.contributing}\n
-    
-  // ## Test\n
-  // ${response.test}\n
-    
-  // ## License\n
-  // ${response.license}`,
-  (err) => err ? console.log(err) : console.log("Success!")
-  )
-};
+// function writeToFile(response) {
+//     fs.appendFile("newREADME.md",
+//   (err) => err ? console.log(err) : console.log("Success!")
+//   )
+// };
 
 function init() {
     prompt(questions)
-      .then(writeToFile);
+      .then((response) => {
+        const readme = generateMarkdown(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 };
 
 init();
